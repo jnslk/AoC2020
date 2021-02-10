@@ -1,29 +1,26 @@
-name: test notebook using Conda
-
+name: test notebook
 
 on: [push]
 
 jobs:
   test-notebook:
+    name: test Notebook
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
+    defaults:
+      run:
+        shell: bash -l {0}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Add conda to system path
-        run: |
-          # $CONDA is an environment variable pointing to the root of the miniconda directory
-          echo $CONDA/bin >> $GITHUB_PATH
+      - uses: conda-incubator/setup-miniconda@v2
           
       - name: Install dependencies
         run: |
-          conda env update --file environment.yml --name base
+          conda env create -f environment.yml
           
       - name: execute all cells in notebook
-        shell: bash
         run: |
           conda activate anaconda_notebook
           jupyter nbconvert --to notebook --execute Advent_of_Code_2020.ipynb --inplace
