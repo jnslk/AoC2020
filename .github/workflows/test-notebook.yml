@@ -4,7 +4,7 @@ name: test notebook using Conda
 on: [push]
 
 jobs:
-  build-linux:
+  test-notebook:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
@@ -17,10 +17,13 @@ jobs:
         run: |
           # $CONDA is an environment variable pointing to the root of the miniconda directory
           echo $CONDA/bin >> $GITHUB_PATH
+          
       - name: Install dependencies
         run: |
           conda env update --file environment.yml --name base
-      - name: run notebook
+          
+      - name: execute all cells in notebook
+        shell: bash
         run: |
           conda activate anaconda_notebook
           jupyter nbconvert --to notebook --execute Advent_of_Code_2020.ipynb --inplace
