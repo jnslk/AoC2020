@@ -1,0 +1,11 @@
+name: anaconda_notebook
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - python=3.8
+  - jupyterlab
+  - scikit-learn
+prefix: /Users/jnslk/opt/anaconda3/envs/anaconda_notebook
