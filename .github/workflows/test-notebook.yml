@@ -1,0 +1,25 @@
+name: test notebook using Conda
+
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Install conda environment
+        uses: conda-incubator/setup-miniconda@v1
+        with:
+          activate-environment: anaconda_notebook
+          environment-file: environment.yml
+          python-version: 3.8
+      - name: run notebook
+        run: |
+          conda activate anaconda_notebook
+          jupyter nbconvert --to notebook --execute Advent_of_Code_2020.ipynb --inplace
