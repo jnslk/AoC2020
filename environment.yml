@@ -1,0 +1,10 @@
+name: anaconda_notebook
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - python=3.8
+  - jupyterlab
+  - scikit-learn
