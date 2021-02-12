@@ -23,4 +23,4 @@ jobs:
       - name: execute all cells in notebook
         run: |
           conda activate anaconda_notebook
-          jupyter nbconvert --to notebook --execute Advent_of_Code_2020.ipynb --inplace
+          jupyter nbconvert --to notebook --execute ipynb/Advent_of_Code_2020.ipynb --inplace
