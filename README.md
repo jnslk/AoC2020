@@ -4,25 +4,25 @@ This notebook contains my solutions for the 2020 version of [Advent of Code](htt
 
 ![Test Notebook](https://github.com/jnslk/AoC2020/workflows/test%20notebook/badge.svg)
 
-- [Day 1: Report Repair](#Day-1:-Report-Repair)
-- [Day 2: Password Philosophy](#Day-2:-Password-Philosophy)
-- [Day 3: Toboggan Trajectory](#Day-3:-Toboggan-Trajectory)
-- [Day 4: Passport Processing](#Day-4:-Passport-Processing)
-- [Day 5: Binary Boarding](#Day-5:-Binary-Boarding)
-- [Day 6: Custom Customs](#Day-6:-Custom-Customs)
-- [Day 7: Handy Haversacks](#Day-7:-Handy-Haversacks)
-- [Day 8: Handheld Halting](#Day-8:-Handheld-Halting)
-- [Day 9: Encoding Error](#Day-9:-Encoding-Error)
-- [Day 10: Adapter Array](#Day-10:-Adapter-Array)
-- [Day 11: Seating System](#Day-11:-Seating-System)
-- [Day 12: Rain Risk](#Day-12:-Rain-Risk)
-- [Day 13: Shuttle Search](#Day-13:-Shuttle-Search)
-- [Day 14: Docking Data](#Day-14:-Docking-Data)
-- [Day 15: Rambunctious Recitation](#Day-15:-Rambunctious-Recitation)
-- [Day 16: Ticket Translation](#Day-16:-Ticket-Translation)
-- [Day 17: Conway Cubes](#Day-17:-Conway-Cubes)
-- [Day 18: Operation Order](#Day-18:-Operation-Order)
-- [Day 19: Monster Messages](#Day-19:-Monster-Messages)
+- [Day 1: Report Repair][d01]
+- [Day 2: Password Philosophy][d02]
+- [Day 3: Toboggan Trajectory][d03]
+- [Day 4: Passport Processing][d04]
+- [Day 5: Binary Boarding][d05]
+- [Day 6: Custom Customs][d06]
+- [Day 7: Handy Haversacks][d07]
+- [Day 8: Handheld Halting][d08]
+- [Day 9: Encoding Error][d09]
+- [Day 10: Adapter Array][d10]
+- [Day 11: Seating System][d11]
+- [Day 12: Rain Risk][d12]
+- [Day 13: Shuttle Search][d13]
+- [Day 14: Docking Data][d14]
+- [Day 15: Rambunctious Recitation][d15]
+- [Day 16: Ticket Translation][d16]
+- [Day 17: Conway Cubes][d17]
+- [Day 18: Operation Order][d18]
+- [Day 19: Monster Messages][d19]
 
 ### Imports and Dataimport
 
@@ -1938,3 +1938,23 @@ count_valid_messages2(*input19)
     294
 
 
+
+[d01]: #Day-1:-Report-Repair
+[d02]: #Day-2:-Password-Philosophy
+[d03]: #Day-3:-Toboggan-Trajectory
+[d04]: #Day-4:-Passport-Processing
+[d05]: #Day-5:-Binary-Boarding
+[d06]: #Day-6:-Custom-Customs)
+[d07]: #Day-7:-Handy-Haversacks
+[d08]: #Day-8:-Handheld-Halting
+[d09]: #Day-9:-Encoding-Error
+[d10]: #Day-10:-Adapter-Array
+[d11]: #Day-11:-Seating-System
+[d12]: #Day-12:-Rain-Risk
+[d13]: #Day-13:-Shuttle-Search
+[d14]: #Day-14:-Docking-Data
+[d15]: #Day-15:-Rambunctious-Recitation
+[d16]: #Day-16:-Ticket-Translation
+[d17]: #Day-17:-Conway-Cubes
+[d18]: #Day-18:-Operation-Order
+[d19]: #Day-19:-Monster-Messages
