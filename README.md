@@ -4,25 +4,25 @@ This notebook contains my solutions for the 2020 version of [Advent of Code](htt
 
 ![Test Notebook](https://github.com/jnslk/AoC2020/workflows/test%20notebook/badge.svg)
 
-- [Day 1: Report Repair][d01]
-- [Day 2: Password Philosophy][d02]
-- [Day 3: Toboggan Trajectory][d03]
-- [Day 4: Passport Processing][d04]
-- [Day 5: Binary Boarding][d05]
-- [Day 6: Custom Customs][d06]
-- [Day 7: Handy Haversacks][d07]
-- [Day 8: Handheld Halting][d08]
-- [Day 9: Encoding Error][d09]
-- [Day 10: Adapter Array][d10]
-- [Day 11: Seating System][d11]
-- [Day 12: Rain Risk][d12]
-- [Day 13: Shuttle Search][d13]
-- [Day 14: Docking Data][d14]
-- [Day 15: Rambunctious Recitation][d15]
-- [Day 16: Ticket Translation][d16]
-- [Day 17: Conway Cubes][d17]
-- [Day 18: Operation Order][d18]
-- [Day 19: Monster Messages][d19]
+- [Day 1: Report Repair](#Day-1:-Report-Repair)
+- [Day 2: Password Philosophy](#Day-2:-Password-Philosophy)
+- [Day 3: Toboggan Trajectory](#Day-3:-Toboggan-Trajectory)
+- [Day 4: Passport Processing](#Day-4:-Passport-Processing)
+- [Day 5: Binary Boarding](#Day-5:-Binary-Boarding)
+- [Day 6: Custom Customs](#Day-6:-Custom-Customs)
+- [Day 7: Handy Haversacks](#Day-7:-Handy-Haversacks)
+- [Day 8: Handheld Halting](#Day-8:-Handheld-Halting)
+- [Day 9: Encoding Error](#Day-9:-Encoding-Error)
+- [Day 10: Adapter Array](#Day-10:-Adapter-Array)
+- [Day 11: Seating System](#Day-11:-Seating-System)
+- [Day 12: Rain Risk](#Day-12:-Rain-Risk)
+- [Day 13: Shuttle Search](#Day-13:-Shuttle-Search)
+- [Day 14: Docking Data](#Day-14:-Docking-Data)
+- [Day 15: Rambunctious Recitation](#Day-15:-Rambunctious-Recitation)
+- [Day 16: Ticket Translation](#Day-16:-Ticket-Translation)
+- [Day 17: Conway Cubes](#Day-17:-Conway-Cubes)
+- [Day 18: Operation Order](#Day-18:-Operation-Order)
+- [Day 19: Monster Messages](#Day-19:-Monster-Messages)
 
 ### Imports and Dataimport
 
@@ -49,9 +49,9 @@ def data(day: int, parser=str, sep='\n') -> list:
         return list(map(parser, sections))
 ```
 
-## Day 1: Report Repair
+# Day 1: Report Repair
 
-### Part 1
+## Part 1
 The first challenge is to find two numbers in a list that add up to 2020 and return their product.
 
 
@@ -83,7 +83,7 @@ twosum(input1)
 
 
 
-### Part 2
+## Part 2
 The second part of the puzzle is to find the three distinct numbers that add to 2020 and return their product.
 
 
@@ -118,9 +118,9 @@ threesum(input1)
 
 
 
-## Day 2: Password Philosophy
+# Day 2: Password Philosophy
 
-### Part 1
+## Part 1
 The First part of this days challenge is to count how many passwords are valid according to their policies.
 
 A given password string is considered valid if it contains between min and max instances of a specific character, where min, max and the character are specified in the policy.
@@ -161,7 +161,7 @@ sum(map(check_pw, input2))
 
 
 
-### Part 2
+## Part 2
 The second part of this puzzle changes the interpretation of the password policy.
 This digits that used to express min and max before now denote a position in the password string, however the index starts at 1.
 
@@ -191,9 +191,9 @@ sum(map(check_pw2, input2))
 
 
 
-## Day 3: Toboggan Trajectory
+# Day 3: Toboggan Trajectory
 
-### Part 1
+## Part 1
 This challenge provides a map that contains '.' for free spaces and '#' for trees.
 
 The questions is how many trees are encountered for a given map with a path that takes 3 steps right and 1 down until the bottom of the map is reached with the assumption that the pattern specified in the map repeats infinitely to the right.
@@ -235,7 +235,7 @@ count_trees_along_slope(input3)
 
 
 
-### Part 2
+## Part 2
 The second challenge for this day asks for the product of the encountered trees for paths with different slopes.
 
 
@@ -259,9 +259,9 @@ count_trees_along_all_slopes(input3)
 
 
 
-## Day 4: Passport Processing
+# Day 4: Passport Processing
 
-### Part 1
+## Part 1
 For this challenge a batch of passports is given. Each passport is represented as a sequence of key:value pairs. 
 A passport is valid if it contains all expected fields while country id is optional. How many passports are valid?
 
@@ -304,7 +304,7 @@ sum(map(check_passport_fields, input4))
 
 
 
-### Part 2
+## Part 2
 The second part of the puzzle requires passports to not only posses all required fields but also that the values of these fields obey specific rules. How many passports are valid according to the new stricter rules?
 
 
@@ -374,9 +374,9 @@ sum(check_passport_values(passport)
 
 
 
-## Day 5: Binary Boarding
+# Day 5: Binary Boarding
 
-### Part 1
+## Part 1
 This puzzle provides a list of boarding passes that each specify one seat in the airplane. The airlane uses a binary space partioning approach for seating. Each boarding pass contains 10 characters, the first 7 are either 'F' or 'B' and specify the exact row. The last 3 characters can either be 'R' or 'L' and specify the column of the seat.
 
 The airplane has 128 rows (0-127) and 8 columns(0-7). 'F' means front and indicates the lower half of the search space, 'B' means back and designates the upper half of the respective interval. For the column the convention is that 'L' can be interpreted as left and is meant to designate the lower half of the search space, while 'R' or right means the upper half.
@@ -428,7 +428,7 @@ max(map(get_seat_ID, input5))
 
 
 
-### Part 2
+## Part 2
 For the second part of this days puzzle a specific seat ID has to be found.
 The wanted seat ID is not in the list of provided boarding passes.
 This is not unambigously however so additionaly it is stated that the ID is not at the very front or back of the airplane but within the bulk of all the other seat IDs, as the adjacent IDs are also in the provided list.
@@ -451,9 +451,9 @@ find_seat_ID()
 
 
 
-## Day 6: Custom Customs
+# Day 6: Custom Customs
 
-### Part 1
+## Part 1
 This puzzle provides a list with answers of groups for customs declarations questions. Groups are separted by blank lines. A group can contain answers for multiple persons, all answers for one person are in a single line. There are 26 different custom questions and a positive answer is represented by the corresponding letter in the list. The challenge is to count all different questions that are group answered with yes and to sum up these counts for all groups.
 
 
@@ -497,7 +497,7 @@ count_groups(input6)
 
 
 
-### Part 2
+## Part 2
 For the second part the task is modified slightly to only count the answers in a group that were answered with yes by every person in the group and to then count these for all groups.
 
 
@@ -519,9 +519,9 @@ count_groups2(input6)
 
 
 
-## Day 7: Handy Haversacks
+# Day 7: Handy Haversacks
 
-### Part 1
+## Part 1
 This challenge provides a set of baggage rules. Bags are colorcoded and a rule specfies for a colored bag which other colored bags it can contain. The task is to find out how many other colored bags can contain a shiny golden bag either directly or within their other contained bags.
 
 
@@ -577,7 +577,7 @@ count_bags_containing_at_least_one(input7)
 
 
 
-### Part 2
+## Part 2
 The second part of the challenge is to count all the bags that are contained in a shiny gold bag either directly or within the contained bags.
 
 
@@ -611,9 +611,9 @@ count_bags_within(input7)
 
 
 
-## Day 8: Handheld Halting
+# Day 8: Handheld Halting
 
-### Part1
+## Part1
 This days puzzle provides a little assembly program, where each line consists of an opcode and an argument. Acc puts adds the argument to the accumulator, nop does no operation and is followe by the next instruction while jmp jumps to the relative address given by the argument. The challenge is to execute the given assembly program until it hits a loop for the first time and to return the accumulator value.
 
 
@@ -667,7 +667,7 @@ accumulator_before_loop(input8)
 
 
 
-### Part 2
+## Part 2
 For part 2 exactly one jmp instruction can be swapped to nop or vice versa. The goal is to fix one instruction in the program, so that no loops occur. After the program terminates the accumulator has to be returned for this puzzle.
 
 
@@ -722,9 +722,9 @@ fix_program(input8)
 
 
 
-## Day 9: Encoding Error
+# Day 9: Encoding Error
 
-### Part 1
+## Part 1
 This puzzle provides a list of integers. After an preamble of 25 numbers every following number can be obtained as the sum of 2 of the previous 25 numbers. The challenge is to find the first number in the list, that violates this property.
 
 
@@ -780,7 +780,7 @@ find_outlier(input9, 25)
 
 
 
-### Part 2
+## Part 2
 For the second part of the challenge the goal is to find a contiguous sequence of at least 2 numbers in the list that add up to the outlier from part 1. The sum of the minimum and maximum of this sequence has to be returned.
 
 
@@ -816,9 +816,9 @@ find_weakness(input9, 25)
 
 
 
-## Day 10: Adapter Array
+# Day 10: Adapter Array
 
-### Part1
+## Part1
 This puzzle provides a list of joltage values for charging adapter. Each adapter is rated for joltages 1, 2, or 3, jolts below its own joltage as input. The charging outlet in this puzzle has a joltage of 0 and the device that will be charged is rated for a joltage that is equal to that of the adapter with the largest joltage + 3.
 
 The task is to construct a chain that uses all adapters and count the distribution off joltage difference between outlet, adapters and device. The number of all differences of 1 multiplied by the number of all differences of 3 has to be returned as solution.
@@ -893,7 +893,7 @@ build_adapter_chain(input10)
 
 
 
-### Part 2
+## Part 2
 The Solution to the second part of this days challenge is the number of all valid combinations of adapters from outlet to device.
 
 
@@ -930,9 +930,9 @@ count_arrangements(input10)
 
 
 
-## Day 11: Seating System
+# Day 11: Seating System
 
-### Part 1
+## Part 1
 Todays puzzle is a variation of Conways [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). The input represents a grid of a seating map. Each position can either be an empty seat (L), occupied (#) or a floor tile (.) and the following rules determine how a seat can change its state depending on its own state and on that of its 8 immidiate neighbour seats.
 
 - If a seat is empty (L) and there are no occupied seats adjacent to it, the seat becomes occupied.
@@ -1006,7 +1006,7 @@ run(deepcopy(input11), check_neighbors)
 
 
 
-### Part 2
+## Part 2
 For the second Part there are two rule changes:
 - An occupied seat turns empty if 5 or more (instead of 4) neigboring seats are also occupied.
 - Instead of considering just the eight immediately adjacent seats, now the first seat visible across floor tiles in each of the eight directions is considered to determine how many neighboring seats are occupied.
@@ -1044,9 +1044,9 @@ run(input11, check_neighbors_visible, crowded=5)
 
 
 
-## Day 12: Rain Risk
+# Day 12: Rain Risk
 
-### Part 1
+## Part 1
 This puzzle provides a list of navigation actions for a ship. Each action starts with a single letter followed by a value and has the following meaning:
 - Action N means to move north by the given value.
 - Action S means to move south by the given value.
@@ -1120,7 +1120,7 @@ navigate(input12)
 
 
 
-### Part 2
+## Part 2
 For the second part of the puzzle a waypoint is introduced and the rules change:
 - Action N means to move the waypoint north by the given value.
 - Action S means to move the waypoint south by the given value.
@@ -1161,9 +1161,9 @@ navigate_waypoint(input12)
 
 
 
-## Day 13: Shuttle Search
+# Day 13: Shuttle Search
 
-### Part 1
+## Part 1
 This challenge deals with a bus-shuttle-schedule. The schedule is defined based on a timestamp that measures the number of minutes since some fixed reference point in the past.
 
 At timestamp 0 all buses start their routes from the port and drive on to eventually come back to the port where they started and then repeat their tour infinitely. However the duration of the different bus tours differs and the duration of each bus' tour is represented in its ID which gives the duration in minutes.
@@ -1201,7 +1201,7 @@ find_earliest_bus(input13_1)
 
 
 
-### Part 2
+## Part 2
 The second part of the challenge is to find the earliest timestamp such that the first bus ID departs at that time and each subsequent listed bus ID departs at that subsequent minute, that is represented by the index in the schedule.
 
 So the first bus(index 0) in the schedule starts at timestamp t, the second bus(index 1) in the schedule starts at timestamp t+1, the nth bus starts at t+n and so on...
@@ -1256,9 +1256,9 @@ find_earliest_timestamp(input13_2[1].split(','))
 
 
 
-## Day 14: Docking Data
+# Day 14: Docking Data
 
-### Part 1
+## Part 1
 This puzzle provides an initialization program. The instructions can do one of two things.
 - update the bitmask
 - write a value to a memory address
@@ -1314,7 +1314,7 @@ run_program(input14)
 
 
 
-### Part 2
+## Part 2
 Rules changed slightly for the second part. Values writen to memory are not affected anymore by the mask, instead the mask is apllied to the address:
 - If the bitmask bit is 0, the corresponding memory address bit is unchanged.
 - If the bitmask bit is 1, the corresponding memory address bit is overwritten with 1.
@@ -1371,9 +1371,9 @@ run_program2(input14)
 
 
 
-## Day 15: Rambunctious Recitation
+# Day 15: Rambunctious Recitation
 
-### Part 1
+## Part 1
 This days puzzle is about a memory game. In this game, the players take turns saying numbers. They begin by taking turns reading from a list of starting numbers. Then, each turn consists of considering the most recently spoken number:
 
 - If that was the first time the number has been spoken, the current player says 0.
@@ -1418,7 +1418,7 @@ memory_game(input15)
 
 
 
-### Part 2 
+## Part 2 
 For the second part not the number after turn 2020 but instead 30000000 is wanted.
 
 
@@ -1437,9 +1437,9 @@ memory_game(input15, 30000000)
 
 
 
-## Day 16: Ticket Translation
+# Day 16: Ticket Translation
 
-### Part 1
+## Part 1
 Todays puzzle is about deciphering the information of a train ticket. The text on the ticket is in a unknown language, so the input of the train ticket contains only numbers in certain fields. Additionaly the numbers of nearby tickets are available and a table with rules for the tidket fields that list the name of fields and ranges for valid numbers in those fields. 
 
 The challenge for the first part is to find all of the nearby tickets that contain values that aren´t valid for any field. What is the sum of all those invalid numbers across all tickets?
@@ -1489,7 +1489,7 @@ invalid_tickets(input16)
 
 
 
-### Part 2
+## Part 2
 The second part of the challenge is to identify which numbers on the train ticket correspond to which field. All invalid tickets have to be discarded and the numbers on the nearby tickets together with the given train ticket can be used together with the rules for field values. What is the product of all values on the train ticket for fields that start with 'departure' ?
 
 
@@ -1557,9 +1557,9 @@ departure_product(infer_ticket(input16))
 
 
 
-## Day 17: Conway Cubes
+# Day 17: Conway Cubes
 
-### Part 1
+## Part 1
 This days puzzle is Conway's Game of Life in three dimensions. It is played on a infinite 3-dimensional grid. At each integer coordinate of the grid given by (x, y, z) there is one cube that is either active or inactive.
 
 At the start of the simulation, almost all cubes are inactive except for a pattern on a 2-dimensional slice at the bottom that is provided as input. In this pattern '#' denotes an active cube and '.' represents the inactive state.
@@ -1624,7 +1624,7 @@ simulate_cycles(input17)
 
 
 
-### Part 2
+## Part 2
 The second challenge is to solve the exact same problem but in 4 dimensions this time.
 
 
@@ -1666,9 +1666,9 @@ simulate_cycles(input17, d=4)
 
 
 
-## Day 18: Operation Order
+# Day 18: Operation Order
 
-### Part 1
+## Part 1
 This puzzle consists of a list of math expressions that are a combination of natural numbers and addition and multiplication operators aswell as parentheses. However the conventional operator precedence of multiplication before addition is discarded for this challenge, only parentheses can influence which operations get evaluated first. 
 
 Given this rule change to conventional math, what is the sum of all expressions in the list if evaluated?
@@ -1721,7 +1721,7 @@ sum(map(evaluate_l2r, input18))
 
 
 
-### Part 2
+## Part 2
 
 The second part hast the twist that now addition has a higher precedence than multiplication. Again what is the sum of all expressions given this new rule?
 
@@ -1760,9 +1760,9 @@ sum(map(evaluate_add_first, input18))
 
 
 
-## Day 19: Monster Messages
+# Day 19: Monster Messages
 
-### Part 1
+## Part 1
 This puzzle provides a set of rules and a set of strings. Each string is made up of a sequence containing either 'a' or 'b'. Rules start with their ID and can either be 'a', 'b' or a reference to other rule IDs. There is also a pipe operator to indicate alternative sets or rule IDs. There are no cycles in the references of rule IDs. A rule is matched by a string if it satisfies the pattern specified by the rule and there are no characters left to match after the rule ends. Given the set of rules, how many strings are matched by the first rule?
 
 
@@ -1826,7 +1826,7 @@ count_valid_messages(*input19)
 
 
 
-### Part 2
+## Part 2
 
 The second part of the challenge introduces two cycles in the rules 8 and 11. How many strings are matched with these changes by the first rule?
 
@@ -1938,23 +1938,3 @@ count_valid_messages2(*input19)
     294
 
 
-
-[d01]: #Day-1:-Report-Repair
-[d02]: #Day-2:-Password-Philosophy
-[d03]: #Day-3:-Toboggan-Trajectory
-[d04]: #Day-4:-Passport-Processing
-[d05]: #Day-5:-Binary-Boarding
-[d06]: #Day-6:-Custom-Customs)
-[d07]: #Day-7:-Handy-Haversacks
-[d08]: #Day-8:-Handheld-Halting
-[d09]: #Day-9:-Encoding-Error
-[d10]: #Day-10:-Adapter-Array
-[d11]: #Day-11:-Seating-System
-[d12]: #Day-12:-Rain-Risk
-[d13]: #Day-13:-Shuttle-Search
-[d14]: #Day-14:-Docking-Data
-[d15]: #Day-15:-Rambunctious-Recitation
-[d16]: #Day-16:-Ticket-Translation
-[d17]: #Day-17:-Conway-Cubes
-[d18]: #Day-18:-Operation-Order
-[d19]: #Day-19:-Monster-Messages
